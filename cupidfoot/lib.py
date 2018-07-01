@@ -265,10 +265,10 @@ class KeyAction(SimpleKeyAction):
 @register_class
 class KeyCombination(Action):
 	def __init__(self, keys, mods=Mod.NONE):
-		if len(self.keys) > 6:
-			raise ValueError('Cannot have more than 6 items')
 		self.keys = keys
 		self.mods = mods
+		if len(self.keys) > 6:
+			raise ValueError('Cannot have more than 6 items')
 
 	def __repr__(self):
 		return '<%s keys=%r>' % (type(self).__name__, self.keys)
